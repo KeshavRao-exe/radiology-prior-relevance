@@ -6,6 +6,8 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY classifier.py .
+COPY classifier_ml.py .
+COPY model.pkl .
 COPY main.py .
 
 EXPOSE ${PORT:-8000}

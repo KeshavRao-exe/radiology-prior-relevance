@@ -17,7 +17,7 @@ from fastapi import FastAPI, Request
 from fastapi.responses import JSONResponse
 from pydantic import BaseModel
 
-from classifier import is_relevant
+from classifier_ml import is_relevant
 
 # ---------------------------------------------------------------------------
 # Logging
