@@ -8,6 +8,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY classifier.py .
 COPY main.py .
 
-EXPOSE 8000
+EXPOSE ${PORT:-8000}
 
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+# Use shell form so $PORT is expanded at runtime (Railway injects $PORT)
+CMD uvicorn main:app --host 0.0.0.0 --port ${PORT:-8000}
